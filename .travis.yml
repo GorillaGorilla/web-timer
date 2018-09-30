@@ -11,14 +11,10 @@ addons:
   - SERVER_URL
 before_install:
 - ls -la ~/.ssh
-- ls -la ~/.ssh/authorized_keys
-- touch ~/.ssh/deploy_rsa
 - openssl aes-256-cbc -K $encrypted_bf919a6ecdb3_key -iv $encrypted_bf919a6ecdb3_iv
   -in deploy_rsa.enc -out ~\/.ssh/deploy_rsa -d
 - eval "$(ssh-agent -s)"
-- ssh-add ~/.ssh/deploy_rsa
 - ssh-add -L
-- node --version
 - pwd
 - ls -la
 - echo "Running Travis build for $APP_NAME"

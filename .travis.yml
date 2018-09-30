@@ -11,7 +11,7 @@ addons:
   - SERVER_URL
 before_install:
 - openssl aes-256-cbc -K $encrypted_bf919a6ecdb3_key -iv $encrypted_bf919a6ecdb3_iv
-  -in deploy_rsa.enc -out ~\/.ssh/deploy_rsa -d
+  -in deploy_rsa.enc -out ~/.ssh/deploy_rsa -d
 - ls -la ~/.ssh
 - eval "$(ssh-agent -s)"
 - ssh-add -L

@@ -25,13 +25,13 @@ before_install:
 script:
 - echo "hello"
 after_success:
-- mkdir $APP_NAME
-- touch $APP_NAME/travis_build_$TRAVIS_JOB_NUMBER
-- cp Dockerfile $APP_NAME/Dockerfile
-- cp default.conf $APP_NAME/default.conf
-- cp .htpasswd $APP_NAME/.htpasswd
-- cp index.html $APP_NAME/index.html
-- ls -la $APP_NAME
+- mkdir ${APP_NAME}
+- touch ${APP_NAME}/travis_build_$TRAVIS_JOB_NUMBER
+- cp Dockerfile ${APP_NAME}/Dockerfile
+- cp default.conf ${APP_NAME}/default.conf
+- cp .htpasswd ${APP_NAME}/.htpasswd
+- cp index.html ${APP_NAME}/index.html
+- ls -la ${APP_NAME}
 deploy:
 - provider: script
   skip_cleanup: true

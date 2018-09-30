@@ -5,9 +5,7 @@ env:
   - PORT=3100
 addons:
   ssh_known_hosts:
-  - ${DEV_SERVER}
-  - DEV_SERVER
-  - SERVER_URL
+  - ec2-35-176-255-49.eu-west-2.compute.amazonaws.com
 language: node_js
 node_js:
   - "9"

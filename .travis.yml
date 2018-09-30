@@ -2,11 +2,11 @@ sudo: required
 
 env:
   global:
-    - APP_NAME=citywars
+    - APP_NAME=web-timer
     - PORT=3100
     - DEV_SERVER=SERVER_URL
-    - TEST_SERVER=SERVER_URL
-    - PROD_SERVER=SERVER_URL
+    # - TEST_SERVER=SERVER_URL
+    # - PROD_SERVER=SERVER_URL
     # - SONAR_SCANNER_DIR=sonar-scanner-3.1.0.1141-linux
 
 addons:
@@ -42,14 +42,6 @@ before_install:
   # - ls -la $SONAR_SCANNER_DIR
   # - ls -la ${SONAR_SCANNER_DIR}/conf
 
-install:
-  - npm i
-
-script:
-  - npm run test
-  - npm run test-coverage
-  # - sonar-scanner -Dsonar.projectKey=$APP_NAME -Dsonar.sources=src -Dsonar.exclusions="src/index.js, src/registerServiceWorker.js, src/setupTests.js, src/tempPolyfills.js, node_modules/**, **.test.js" -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info -Dsonar.host.url=$SONARQUBE_SERVER -Dsonar.login=$SONARQUBE_LOGIN
-  - npm run build
 
 after_success:
   - mkdir $APP_NAME
@@ -57,7 +49,7 @@ after_success:
   - cp Dockerfile $APP_NAME/Dockerfile
   - cp default.conf $APP_NAME/default.conf
   - cp .htpasswd $APP_NAME/.htpasswd
-  - mv build $APP_NAME/build
+  - cp index.html $APP_NAME/index.html
   - ls -la $APP_NAME
 
 deploy:

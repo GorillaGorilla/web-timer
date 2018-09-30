@@ -3,10 +3,9 @@ env:
   global:
   - APP_NAME=web-timer
   - PORT=3100
-  - DEV_SERVER=SERVER_URL
 addons:
   ssh_known_hosts:
-  - SERVER_URL
+  - DEV_SERVER
   - SERVER_URL
   - SERVER_URL
 language: node_js

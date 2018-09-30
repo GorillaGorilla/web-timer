@@ -17,7 +17,7 @@ before_install:
 - ls -la ~/.ssh
 - chmod 700 ~/.ssh/deploy_rsa
 - eval "$(ssh-agent -s)"
-- echo -e "Host ${DEV_SERVER}" >> ~/.ssh/config
+- echo -e "Host ${DEV_SERVER}\n" >> ~/.ssh/config
 - ssh-add ~/.ssh/deploy_rsa
 - ssh-add -L
 - pwd

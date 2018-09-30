@@ -19,7 +19,7 @@ before_install:
 - ssh-add -L
 - pwd
 - ls -la
-- echo "Running Travis build for $APP_NAME"
+- echo "Running Travis build for ${APP_NAME}"
 after_success:
 - mkdir $APP_NAME
 - touch $APP_NAME/travis_build_$TRAVIS_JOB_NUMBER

@@ -17,17 +17,9 @@ addons:
     - SERVER_URL
     # ansible docker prod
     - SERVER_URL
-    
-cache:
-  directories:
-    - node_modules
-
-language: node_js
-node_js:
-  - "9"
 
 before_install:
-  - ls -la ~/.ssh
+  - ls -la ~/.ssh/authorized_keys
   - eval "$(ssh-agent -s)"
   - ssh-add ~/.ssh/id_rsa
   - ssh-add -L # This command produces the public key used by travis. Copy the result into the aws_vars/ssh_keys/travis_keys folder as UNIQUE_NAME.pub

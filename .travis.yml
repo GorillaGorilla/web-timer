@@ -5,8 +5,8 @@ env:
   - PORT=3100
 addons:
   ssh_known_hosts:
+  - ${DEV_SERVER}
   - DEV_SERVER
-  - SERVER_URL
   - SERVER_URL
 language: node_js
 node_js:

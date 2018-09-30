@@ -23,6 +23,9 @@ before_install:
 - pwd
 - ls -la
 - echo "Running Travis build for ${APP_NAME}"
+
+script:
+- echo "hello"
 after_success:
 - mkdir $APP_NAME
 - touch $APP_NAME/travis_build_$TRAVIS_JOB_NUMBER

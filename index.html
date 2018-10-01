@@ -37,7 +37,8 @@
       $(function() {
         let now
         setInterval(() => {
-          now = new Date();
+          const date = String(new Date());
+          now = date.substr(0, date.length-31);
           $('#current').text(now)
         }, 10)
         $("body").on("keydown",function search(e) {

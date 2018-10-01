@@ -32,16 +32,12 @@
     <div id="times"></div>
     <div id="current"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
     <script>
       let count = 1;
       $(function() {
         let now
         setInterval(() => {
-          now = dateFns.format(
-            new Date(),
-            'DD/MM/YYYY HH:mm:ss:SS'
-          )
+          now = new Date();
           $('#current').text(now)
         }, 10)
         $("body").on("keydown",function search(e) {

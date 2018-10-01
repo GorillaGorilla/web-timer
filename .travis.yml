@@ -6,6 +6,7 @@ env:
 addons:
   ssh_known_hosts:
   - ec2-35-176-255-49.eu-west-2.compute.amazonaws.com
+  - ec2-35-176-247-34.eu-west-2.compute.amazonaws.com
 language: node_js
 node_js:
   - "9"
